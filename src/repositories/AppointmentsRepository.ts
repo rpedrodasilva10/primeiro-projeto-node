@@ -14,7 +14,7 @@ class AppointmentsRepository {
     return newAppointment;
   }
 
-  public alreadyBookedHour(parsedDate: Date): boolean {
+  public isAlreadyBookedHour(parsedDate: Date): boolean {
     const alreadyBusyOnDate = this.appointments.find((appointment) =>
       isEqual(appointment.date, parsedDate)
     );

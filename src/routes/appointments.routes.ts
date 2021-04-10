@@ -14,7 +14,7 @@ appointmentsRouter.post('/', (request, response) => {
 
   const parsedDate = startOfHour(parseISO(date));
 
-  if (appointmentsRepository.alreadyBookedHour(parsedDate)) {
+  if (appointmentsRepository.isAlreadyBookedHour(parsedDate)) {
     return response
       .status(400)
       .json({ message: 'Date already busy!', data: date });
